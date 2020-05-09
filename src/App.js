@@ -1,24 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import Lobby from './App/lobby';
+import Game from './App/game';
+import { SCREEN } from './App/constants';
 
 function App() {
+  const [screen, setScreen] = useState(SCREEN.LOBBY);
+  const [score, setScore] = useState(0);
+  const [userName, setUsername] = useState('');
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{
+      display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%', flexDirection: 'row',
+    }}
+    >
+      {screen === SCREEN.LOBBY ? (
+        <Lobby userName={userName} setUsername={setUsername} setScreen={setScreen} />
+      ) : (screen === SCREEN.GAME_OVER ? `Game over, your score: ${score}` : (
+        <Game userName={userName} setScreen={setScreen} setScore={setScore} />
+      ))}
     </div>
   );
 }
