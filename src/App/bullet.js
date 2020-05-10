@@ -1,4 +1,4 @@
-import { SCREEN, GAME_HEIGHT, GAME_WIDTH } from './constants';
+import { GAME_HEIGHT, GAME_WIDTH } from './constants';
 
 // eslint-disable-next-line
 export class Bullet {
@@ -24,8 +24,8 @@ export class Bullet {
     update = () => {
       const x = Math.sin(this.angle) * this.speed;
       const y = Math.cos(this.angle) * this.speed;
-      this.xPosition += x;
-      this.yPosition += y;
+      this.xPosition += y;
+      this.yPosition += x;
 
       if (this.xPosition < 0 || this.xPosition > GAME_WIDTH) {
         this.dead = true;
