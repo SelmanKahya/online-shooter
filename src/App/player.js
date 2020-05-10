@@ -76,15 +76,15 @@ export class Player {
 			);
 		}
 
-		const edgeX = this.mouseX;
-		const edgeY = this.mouseY;
+		var edgeX = this.mouseX;
+		var edgeY = this.mouseY;
 		ctx.beginPath();
 		this.angle = drawArrow(
 			ctx,
 			GAME_WIDTH / 2,
 			GAME_HEIGHT / 2,
-			edgeX * 100,
-			edgeY * 100
+			GAME_WIDTH / 2 + edgeX * 100,
+			GAME_HEIGHT / 2 + edgeY * 100
 		);
 		ctx.stroke();
 	};
