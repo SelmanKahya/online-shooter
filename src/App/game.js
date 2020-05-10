@@ -16,7 +16,7 @@ function Game({ setScreen, setScore, userName }) {
 	let mouseY;
 
 	const mouseMove = (e) => {
-		mouseX = e.pageX - e.target.offsetTop - 270;
+		mouseX = e.pageX - e.target.offsetTop - 550;
 		mouseY = e.pageY - e.target.offsetTop - 200;
 	};
 
