@@ -14,12 +14,19 @@ function Game({ setScreen, setScore, userName }) {
 
 	let mouseX;
 	let mouseY;
-
+/*
 	const mouseMove = (e) => {
 		mouseX = e.pageX - e.target.offsetTop - 550;
 		mouseY = e.pageY - e.target.offsetTop - 200;
 	};
-
+*/
+	const mouseMove = (event) => {
+		var bounds = event.target.getBoundingClientRect();
+		mouseX = event.clientX - bounds.left - 305;
+		mouseY = event.clientY - bounds.top - 205;
+		//console.log(mouseX, mouseY);
+	};
+	
 	useEffect(() => {
 		player = new Player(GAME_WIDTH / 2, GAME_HEIGHT / 2);
 		canvas = document.getElementById('myCanvas');
