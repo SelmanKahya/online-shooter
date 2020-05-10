@@ -1,5 +1,5 @@
 import { getRandomNumber } from './utils';
-import { SCREEN, GAME_HEIGHT, GAME_WIDTH } from './constants';
+import { GAME_HEIGHT, GAME_WIDTH } from './constants';
 
 const centerX = GAME_WIDTH / 2;
 const centerY = GAME_HEIGHT / 2;
